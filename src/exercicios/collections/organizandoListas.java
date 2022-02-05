@@ -1,6 +1,8 @@
 package exercicios.collections;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 public class organizandoListas {
@@ -20,20 +22,39 @@ public class organizandoListas {
 		
 	
 		
-		List<Gato> meusGatos = new ArrayList<Gato>(){{
-			add.(new nome:"Jan", idade: 18, cor:"preto");
-			add.(new nome:"Simba", idade: 6, cor:"trigado");
-			add.(new nome:"Jon", idade: 12, cor:"amarelo");
-		}};
+		List<Gato> meusGatos = new ArrayList<>();
+		
+		
+		meusGatos.add(new Gato("Jan",  18, "preto"));
+		meusGatos.add(new Gato("Simba", 6, "trigado"));
+		meusGatos.add(new Gato("Jon",  12,"amarelo"));
+		meusGatos.add(new Gato("Jon",  12,"amarelo"));
+		
 		System.out.println(meusGatos.toString());
 		
 		
+
+		//Mostre a lista em ordem aleatoria
+		Collections.shuffle(meusGatos);
+		System.out.println(meusGatos);
 		
+		//Mostre a lista em ordem de compara��o natural "nome"
+		Collections.sort(meusGatos);
+		System.out.println(meusGatos);
+		
+		
+		// Ordem por idade
+		Collections.sort(meusGatos, new ComparatorIdade());
+		System.out.println(meusGatos);
+		
+		// Ordem por cor
+		Collections.sort(meusGatos, new ComparatorCor());
+		System.out.println(meusGatos);
 	}
 }
 
 
- class Gato {
+ class Gato implements Comparable<Gato>{
 	
 private	String nome;
 private	int idade;
@@ -82,12 +103,58 @@ private	String cor;
 		", cor:" + cor + '\'' + 
 		'}';
 	}
+
+	@Override
+	public int compareTo(Gato gato) {
+		 
+		return this.getNome().compareToIgnoreCase(gato.getNome());
+		
+		// Se retornar 0 � igual
+		// se retornar 1 � maior que o comparado e est� depois
+		// se retornar -1 � menor que o comparado e est� antes		
+		
+	}
 	
 }
  
  
  
+ class ComparatorIdade implements Comparator<Gato> {
+
+	@Override
+	public int compare(Gato g1, Gato g2) {
+		
+		return Integer.compare(g1.getIdade(), g2.getIdade());
+	}
+	 
+ }
  
+ class ComparatorCor implements Comparator<Gato>{
+
+	@Override
+	public int compare(Gato g1, Gato g2) {
+		
+		return g1.getCor().compareToIgnoreCase(g2.getCor());
+	}
+	 
+ }
+ 
+ class ComparatorNomeCorIdade implements Comparator<Gato>{
+
+	@Override
+	public int compare(Gato g1, Gato g2) {
+			
+		
+			int nome = g1.getNome().compareToIgnoreCase(g2.getNome());
+			if (nome != 0) return nome;   
+			
+			int cor = g1.getCor().compareToIgnoreCase(g2.getCor());
+			if (cor != 0) return cor;
+			//Else
+			return Integer.compare(g1.getIdade(), g2.getIdade());
+	}
+	 
+ }
  
  
  
