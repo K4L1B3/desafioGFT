@@ -81,11 +81,14 @@ public class desafio10 {
 		int count = 0;
 
 		// Recebe a string = ABCDEFGHIJKLMNOPQRSTUVWXYZ
-		String word = sc.next();
 		
+//		String word = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+//		String[] letras = word.split("");
+//		System.out.println(letras[8-1]+letras[5-1]+letras[12-1]+letras[16-1]);
+		
+		String word = sc.next();
 		int RpNum = sc.nextInt();
 		
-
 		while(count < RpNum) {
 			int IdNum = sc.nextInt();
 			repeticoes.add(IdNum);
@@ -103,8 +106,7 @@ public class desafio10 {
         
         while(iterator.hasNext()){
         Integer number = iterator.next();
-        System.out.println(alphabet.get(number-1));
-        
+        System.out.print(alphabet.get(number-1));
         }	
 	}
 }
