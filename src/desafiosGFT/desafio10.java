@@ -103,8 +103,7 @@ public class desafio10 {
         
         while(iterator.hasNext()){
         Integer number = iterator.next();
-        Character v = alphabet.get(number-1);
-        System.out.println(v.toString());
+        System.out.println(alphabet.get(number-1));
         
         }	
 	}
