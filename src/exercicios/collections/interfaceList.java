@@ -92,5 +92,34 @@ public class interfaceList {
 		System.out.println("A lista está vazia? " + notas.isEmpty());
 		
 		
+		/*
+		 * á 04 maneiras de percorrer a lista
+
+			Método 01
+			
+			for(int i=0;i<contatos.size();i++){ System.out.println(contatos.get(i).getNome()); }
+			
+			Método 02
+			
+			for (Iterator iterator = contatos.iterator(); iterator.hasNext(); ) { ContatoT c = iterator.next(); System.out.println (c.getNome()); }
+			
+			Método 03
+			
+			for(ContatoT c : contatos) { System.out.println(c.getNome()); }
+			
+			Método 04
+			
+			Iterator<ContatoT> it = contatos.iterator(); while (it.hasNext()) { ContatoT c = it.next(); System.out.println(c.getNome()); }
+			
+			Vamos ao que eu acho que entendi:
+			
+			Método 01 - Só poderia ser considerado se fosse um arraylist, demais tipos de coleções deve-se usar iteratos
+			Método 02 - “for” usando iterator
+			Método 03 - Seria o “for each”/“enchanced for”, introduzido no java 1.5, onde o iterator fica implicito
+			Método 04 - Usando while(Este método achei o mais “feio” de todos)
+		 * 
+		 */
+		
+		
 	}
 }

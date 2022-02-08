@@ -15,7 +15,7 @@ exemplo, se ele quer enviar a mensagem HELP, ele irá piscar, nesta ordem,
 as lâmpadas acima das letras H, E, L e P.
 
 Dada a letra associada a cada lâmpada e a ordem das lâmpadas que foram 
-piscadas por Will, decifre a mensagem que ele enviou!
+piscadas por Will, decifre a mensagem 
 
 Entrada
 A entrada contém vários casos de teste. A primeira linha de cada caso contém 
@@ -47,27 +47,65 @@ QWERTYUIOPASDFGHJKLZXCVBNM
 //OUTPUT://
 HELLOWORLD
 
+
+[x] - Tratar a string inteira dividindo em caracteres individuais 
+
+[x] - Armazenar cada caracter em uma posição de um array
+
+- Fazer um contador de repetição (while) para receber a quantidade de índices (que seria a quantidade de inputs) e armazena-los em um array
+
+- Percorrer o array de caracteres de acordo com o número passado no array de inputs de números (usando um for para retornar a posição dos arrays)
+
+
 */
 
 package desafiosGFT;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
 import java.util.Scanner;
 
 public class desafio10 {
 	
 	public static void main(String[] args) throws IOException {
-		Scanner leitor = new Scanner(System.in);
-		while (leitor.hasNext()) {
-			String alphabet = leitor.next();
-			String word = "";
-			int letters = leitor.nextInt();
-			for (                  ) {
-				
-			}
-			System.out.println(          );
-		}
-	}
-	
+		Scanner sc = new Scanner(System.in);
+		
+		List<Character> alphabet = new ArrayList<Character>();
+		
+		List<Integer> repeticoes = new ArrayList<Integer>();
+		
+		
+		// Contador com a quantidade de repitições requisitadas
+		int count = 0;
 
+		// Recebe a string = ABCDEFGHIJKLMNOPQRSTUVWXYZ
+		String word = sc.next();
+		
+		int RpNum = sc.nextInt();
+		
+
+		while(count < RpNum) {
+			int IdNum = sc.nextInt();
+			repeticoes.add(IdNum);
+			count++;
+		}
+		
+		System.out.println(repeticoes.toString());
+		
+        for (int i = 0; i < word.length(); i++) {
+            alphabet.add(word.charAt(i));
+        }
+        System.out.println(alphabet.toString());
+        
+        Iterator<Integer> iterator = repeticoes.iterator();
+        
+        while(iterator.hasNext()){
+        Integer number = iterator.next();
+        Character v = alphabet.get(number-1);
+        System.out.println(v.toString());
+        
+        }	
+	}
 }
