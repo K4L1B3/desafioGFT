@@ -70,43 +70,65 @@ import java.util.Scanner;
 public class desafio10 {
 	
 	public static void main(String[] args) throws IOException {
-		Scanner sc = new Scanner(System.in);
+		Scanner leitor = new Scanner(System.in); 
+		  
+	     while (leitor.hasNext()) {  
+	      String alphabet = leitor.next(); 
+		  String word = ""; 
+		  int letters = leitor.nextInt(); 
+		  
+		  for (int i = 0; i < letters; i++) { 
+		    int letter = leitor.nextInt() -1; 
+		    word += alphabet.charAt(letter); 
+		  } 
+		  
+		  System.out.println(word); 
+	    
+	     } 
 		
-		List<Character> alphabet = new ArrayList<Character>();
-		
-		List<Integer> repeticoes = new ArrayList<Integer>();
 		
 		
-		// Contador com a quantidade de repitições requisitadas
-		int count = 0;
-
-		// Recebe a string = ABCDEFGHIJKLMNOPQRSTUVWXYZ
 		
-//		String word = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-//		String[] letras = word.split("");
-//		System.out.println(letras[8-1]+letras[5-1]+letras[12-1]+letras[16-1]);
 		
-		String word = sc.next();
-		int RpNum = sc.nextInt();
+		// MEU CÓDIGO
 		
-		while(count < RpNum) {
-			int IdNum = sc.nextInt();
-			repeticoes.add(IdNum);
-			count++;
-		}
-		
-		System.out.println(repeticoes.toString());
-		
-        for (int i = 0; i < word.length(); i++) {
-            alphabet.add(word.charAt(i));
-        }
-        System.out.println(alphabet.toString());
-        
-        Iterator<Integer> iterator = repeticoes.iterator();
-        
-        while(iterator.hasNext()){
-        Integer number = iterator.next();
-        System.out.print(alphabet.get(number-1));
-        }	
+//		Scanner sc = new Scanner(System.in);
+//		
+//		List<Character> alphabet = new ArrayList<Character>();
+//		
+//		List<Integer> repeticoes = new ArrayList<Integer>();
+//				
+//		// Contador com a quantidade de repitições requisitadas
+//		int count = 0;
+//		// Recebe a string = ABCDEFGHIJKLMNOPQRSTUVWXYZ
+//		String word = sc.next();
+//		int RpNum = sc.nextInt();
+//		
+//		while(count < RpNum) {
+//			int IdNum = sc.nextInt();
+//			repeticoes.add(IdNum);
+//			count++;
+//		}
+//		
+//	//	System.out.println(repeticoes.toString());
+//		
+//        for (int i = 0; i < word.length(); i++) {
+//            alphabet.add(word.charAt(i));
+//        }
+//        
+//      //  System.out.println(alphabet.toString());
+//        
+//        Iterator<Integer> iterator = repeticoes.iterator();
+//       
+//        String result = "";
+//        
+//        while(iterator.hasNext()){
+//        Integer number = iterator.next();
+//     // System.out.print(alphabet.get(number-1));
+//        result += alphabet.get(number-1);
+//        }	
+//        
+//        System.out.println(result);
+  
 	}
 }
