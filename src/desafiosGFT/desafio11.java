@@ -39,11 +39,8 @@ da menor categoria que a colocação K pertence.
 
  
 Exemplos de Entrada	Exemplos de Saída
-7
-
-Top 10
-
-25	Top 25
+7   Top 10
+25	Top 25 
 26	Top 50
  
 III Maratona de Programação FACE - 2015
@@ -61,11 +58,28 @@ III Maratona de Programação FACE - 2015
 public class desafio11 {
 
 	public static void main(String[] args) {
-		 Scanner scan = new Scanner(System.in);
-	     insertTop = sc.nextInt();
-		 int[] TOPS = {1, 3, 5, 10, 25, 50, 100};
+		Scanner sc = new Scanner(System.in);
+	    int N = sc.nextInt();
+//		 int[] TOPS = {1, 3, 5, 10, 25, 50, 100};  //Não entendi pra que usaria um array
 	     
-	     
+		if( N >= 1 && N <= 3 ) {
+			System.out.print("Top 3");
+		}
+		if( N >= 3 && N <= 5 ) {
+			System.out.print("Top 5");
+		}
+		if( N >= 5 && N <= 10 ) {
+			System.out.print("Top 10");
+		}
+		if( N >= 10 && N <= 25 ) {
+			System.out.print("Top 25");
+		}
+		if( N >= 25 && N <= 50 ) {
+			System.out.print("Top 50");
+		}
+		if( N >= 50 && N <= 100 ) {
+			System.out.print("Top 100");
+		}
 
 	}
 
