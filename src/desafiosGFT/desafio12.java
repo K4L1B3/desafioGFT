@@ -1,64 +1,45 @@
 package desafiosGFT;
 
-import java.util.Scanner;
+// A fórmula para calcular a área de uma circunferência é: area = π . raio2. Considerando para este problema que π = 3.14159:
 
-/*
+// - Efetue o cálculo da área, elevando o valor de raio ao quadrado e multiplicando por π.
 
-Leia um caractere maiúsculo, que indica uma operação que deve ser realizada e uma matriz 
-M[12][12]. Em seguida, calcule e mostre a soma ou a média considerando somente aqueles 
-elementos que estão acima da diagonal principal da matriz, conforme ilustrado abaixo (área verde).
+// Entrada
+// A entrada contém um valor de ponto flutuante (dupla precisão), no caso, a variável raio.
 
- 
-Entrada
-A primeira linha de entrada contem um único caractere Maiúsculo O ('S' ou 'M'), 
-indicando a operação (Soma ou Média) que deverá ser realizada com os elementos 
-da matriz. Seguem os 144 valores de ponto flutuante que compõem a matriz.
+// Saída
+// Apresentar a mensagem "A=" seguido pelo valor da variável area, conforme exemplo abaixo, com 4 casas após o ponto decimal. Utilize variáveis de dupla precisão (double). Como todos os problemas, não esqueça de imprimir o fim de linha após o resultado, caso contrário, você receberá "Presentation Error".
 
-Saída
-Imprima o resultado solicitado (a soma ou média), com 1 casa após o ponto decimal.
 
- 
-Exemplo de Entrada	Exemplo de Saída
-S
-1.0
-0.0
--3.5
-2.5
-4.1
-...
+// Exemplos de Entrada	Exemplos de Saída
+// 2.00
 
-12.6
+// A=12.5664
 
-*/
+// 100.64
 
-//calcule e mostre a soma ou a média 
-//considerando somente aqueles elementos que estão acima da diagonal principal da matriz
+// A=31819.3103
 
-public class desafio12 {
+// 150.00
 
-	public static void main(String[] args) {
-	
-		         Scanner leitor = new Scanner(System.in);
-		       
-		         double soma = 0;
-		         char O = leitor.next().toUpperCase().charAt(0);
-		         double[][] M = new double[12][12];
-		         for (int i = 0; i < M.length; i++) {
-		            for (int j = 0; j < M[i].length; j++) {
-		                M[i][j] = leitor.nextDouble();
-		            }
-		        }
+// A=70685.7750
 
-		        for (int i = 0; i < M.length; i++) {
-		            for (int j = 0; j < M[i].length; j++) {
-		                if (j > i) soma += M[i][j];
-		            }
-		        }
 
-		        if (O == 'M') soma /= ((M.length * M.length) - 12) / 2; // 66
-		        System.out.println(String.format("%.1f", soma));
+import java.util.Scanner; 
+import java.util.*;
 
-		      }
-	}
+public class desafio12{
+	public static void main(String[] args){
+		Scanner sc = new Scanner(System.in);
+
+     double R = sc.nextDouble();
+     double PI = 3.14159;
+     double area;
+      
+    	area = PI * (Math.pow( R ,2));
+    
+    	System.out.println("A="+String.format("%.4f", area));
+    }
 
 }
+
