@@ -11,7 +11,7 @@
 
 The following tools will be used in building the project:
   
-**Front-end**
+**Back-end**
 
   * Java
 
